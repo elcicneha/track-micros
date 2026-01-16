@@ -9,6 +9,7 @@ type UseNutritionDataResult = {
   foods: Food[]
   nutrients: Nutrient[]
   conversionMap: Record<string, number>
+  categoryMap: Record<string, string>
   loading: boolean
   error: string | null
 }
@@ -86,5 +87,16 @@ export function useNutritionData(): UseNutritionDataResult {
     return buildConversionMap(validMetadata, nutrients)
   }, [nutrientMetadata, nutrients])
 
-  return { foods, nutrients, conversionMap, loading, error }
+  // Compute category map once when data loads
+  const categoryMap = useMemo(() => {
+    const map: Record<string, string> = {}
+    nutrientMetadata.forEach((meta) => {
+      if (meta.code && meta.category) {
+        map[meta.code] = meta.category
+      }
+    })
+    return map
+  }, [nutrientMetadata])
+
+  return { foods, nutrients, conversionMap, categoryMap, loading, error }
 }

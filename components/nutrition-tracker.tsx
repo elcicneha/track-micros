@@ -19,7 +19,7 @@ const USER_WEIGHT_KG = 50
 
 export function NutritionTracker() {
   const [selectedFoods, setSelectedFoods] = useState<SelectedFood[]>([])
-  const { foods, nutrients, conversionMap, loading } = useNutritionData()
+  const { foods, nutrients, conversionMap, categoryMap, loading } = useNutritionData()
 
   const addFood = (food: Food) => {
     setSelectedFoods([...selectedFoods, { ...food, quantity: 100 }])
@@ -34,8 +34,8 @@ export function NutritionTracker() {
   }
 
   const totalNutrients = useMemo(
-    () => calculateNutrientTotals(selectedFoods, nutrients, conversionMap),
-    [selectedFoods, nutrients, conversionMap]
+    () => calculateNutrientTotals(selectedFoods, nutrients, conversionMap, categoryMap),
+    [selectedFoods, nutrients, conversionMap, categoryMap]
   )
 
   // Filter nutrients to only show those with valid RDA values
