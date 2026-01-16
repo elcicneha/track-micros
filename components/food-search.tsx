@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useMemo } from "react"
 import { Search } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import type { Food } from "@/lib/supabase"
@@ -14,10 +14,14 @@ interface FoodSearchProps {
 export function FoodSearch({ foods, selectedFoodCodes, onSelectFood }: FoodSearchProps) {
   const [searchQuery, setSearchQuery] = useState("")
 
-  const filteredFoods = foods.filter(
-    (food) =>
-      food.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
-      !selectedFoodCodes.includes(food.code)
+  const filteredFoods = useMemo(
+    () =>
+      foods.filter(
+        (food) =>
+          food.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
+          !selectedFoodCodes.includes(food.code)
+      ),
+    [foods, searchQuery, selectedFoodCodes]
   )
 
   const handleSelectFood = (food: Food) => {
