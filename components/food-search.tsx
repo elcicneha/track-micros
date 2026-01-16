@@ -1,8 +1,14 @@
 "use client"
 
-import { useState, useMemo } from "react"
-import { Search } from "lucide-react"
-import { Input } from "@/components/ui/input"
+import { useState, useMemo, useRef, useEffect } from "react"
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from "@/components/ui/command"
 import type { Food } from "@/lib/supabase"
 
 interface FoodSearchProps {
@@ -13,6 +19,7 @@ interface FoodSearchProps {
 
 export function FoodSearch({ foods, selectedFoodCodes, onSelectFood }: FoodSearchProps) {
   const [searchQuery, setSearchQuery] = useState("")
+  const inputRef = useRef<HTMLInputElement>(null)
 
   const filteredFoods = useMemo(
     () =>
@@ -29,32 +36,40 @@ export function FoodSearch({ foods, selectedFoodCodes, onSelectFood }: FoodSearc
     setSearchQuery("")
   }
 
+  useEffect(() => {
+    inputRef.current?.focus()
+  }, [])
+
   return (
     <div>
       <label className="text-sm font-semibold text-foreground/70 mb-2 block">Add Foods</label>
-      <div className="relative">
-        <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
-        <Input
+      <Command className="rounded-lg border border-border bg-card" shouldFilter={false}>
+        <CommandInput
+          ref={inputRef}
           placeholder="Search foods..."
           value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          className="pl-9 bg-card border-border"
+          onValueChange={setSearchQuery}
         />
-
-        {searchQuery && filteredFoods.length > 0 && (
-          <div className="absolute top-full left-0 right-0 mt-1 bg-card border border-border rounded-lg shadow-lg z-10 max-h-48 overflow-y-auto">
-            {filteredFoods.map((food) => (
-              <button
-                key={food.code}
-                onClick={() => handleSelectFood(food)}
-                className="w-full text-left px-4 py-2 hover:bg-muted transition-colors text-foreground text-sm"
-              >
-                {food.name}
-              </button>
-            ))}
-          </div>
+        {searchQuery && (
+          <CommandList className="max-h-48">
+            {filteredFoods.length === 0 ? (
+              <CommandEmpty>No foods found.</CommandEmpty>
+            ) : (
+              <CommandGroup>
+                {filteredFoods.map((food) => (
+                  <CommandItem
+                    key={food.code}
+                    value={food.code}
+                    onSelect={() => handleSelectFood(food)}
+                  >
+                    {food.name}
+                  </CommandItem>
+                ))}
+              </CommandGroup>
+            )}
+          </CommandList>
         )}
-      </div>
+      </Command>
     </div>
   )
 }

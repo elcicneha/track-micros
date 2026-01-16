@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useMemo } from "react"
+import { useState, useMemo, useRef } from "react"
 import { X } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
@@ -27,6 +27,44 @@ export function NutritionTracker() {
 
   const removeFood = (code: string) => {
     setSelectedFoods(selectedFoods.filter((f) => f.code !== code))
+  }
+
+  const foodItemRefs = useRef<(HTMLDivElement | null)[]>([])
+
+  const handleFoodKeyDown = (
+    e: React.KeyboardEvent<HTMLDivElement>,
+    index: number,
+    foodCode: string
+  ) => {
+    // Only handle Delete/Backspace if not focused on an input
+    if (e.target instanceof HTMLInputElement) return
+
+    switch (e.key) {
+      case 'Delete':
+      case 'Backspace':
+        e.preventDefault()
+        removeFood(foodCode)
+        // Move focus to next item or previous if last
+        const nextIndex = index < selectedFoods.length - 1 ? index : index - 1
+        setTimeout(() => {
+          if (nextIndex >= 0) {
+            foodItemRefs.current[nextIndex]?.focus()
+          }
+        }, 0)
+        break
+      case 'ArrowDown':
+        e.preventDefault()
+        if (index < selectedFoods.length - 1) {
+          foodItemRefs.current[index + 1]?.focus()
+        }
+        break
+      case 'ArrowUp':
+        e.preventDefault()
+        if (index > 0) {
+          foodItemRefs.current[index - 1]?.focus()
+        }
+        break
+    }
   }
 
   const updateQuantity = (code: string, quantity: number) => {
@@ -76,10 +114,13 @@ export function NutritionTracker() {
                   {selectedFoods.length === 0 ? (
                     <p className="text-muted-foreground text-sm text-center py-8">No foods selected yet</p>
                   ) : (
-                    selectedFoods.map((food) => (
+                    selectedFoods.map((food, index) => (
                       <div
                         key={food.code}
-                        className="flex items-center justify-between gap-2 bg-background rounded-md p-3 hover:bg-muted/50 transition-colors"
+                        ref={(el) => { foodItemRefs.current[index] = el }}
+                        tabIndex={0}
+                        onKeyDown={(e) => handleFoodKeyDown(e, index, food.code)}
+                        className="flex items-center justify-between gap-2 bg-background rounded-md p-3 hover:bg-muted/50 transition-colors focus:outline-none focus:ring-2 focus:ring-ring"
                       >
                         <span className="text-foreground text-sm font-medium flex-1 min-w-0">{food.name}</span>
                         <div className="flex items-center gap-1">
