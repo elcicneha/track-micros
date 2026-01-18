@@ -79,37 +79,54 @@ export function FoodSearch({ foods, selectedFoodCodes, onSelectFood }: FoodSearc
 
   return (
     <div className="relative" ref={containerRef}>
-      <label className="text-sm font-semibold text-foreground/70 mb-2 block">Add Foods</label>
-      <Command className="rounded-lg border border-border bg-card overflow-visible" shouldFilter={false}>
+      <label className="text-sm font-medium text-foreground/70 mb-2 block">Add Foods</label>
+      <Command className="rounded-xl border border-border bg-card overflow-visible shadow-sm" shouldFilter={false}>
         <CommandInput
           ref={inputRef}
-          placeholder="Search foods..."
+          placeholder="Search for foods..."
           value={searchQuery}
           onValueChange={setSearchQuery}
           onKeyDown={handleKeyDown}
           onFocus={handleInputInteraction}
           onClick={handleInputInteraction}
+          className="h-11"
         />
         {searchQuery && isOpen && (
-          <CommandList className="absolute top-full left-0 right-0 z-50 mt-1 max-h-48 rounded-lg border border-border bg-card shadow-lg">
+          <CommandList
+            className="absolute top-full left-0 right-0 z-50 mt-1.5 max-h-56 rounded-xl border border-border bg-card shadow-xl overflow-y-auto animate-fade-in-up"
+            style={{ animationDuration: '150ms' }}
+          >
             {filteredFoods.length === 0 ? (
-              <CommandEmpty>No foods found.</CommandEmpty>
+              <CommandEmpty className="py-8 text-center">
+                <span className="text-2xl block mb-2 opacity-40">🔍</span>
+                <span className="text-muted-foreground text-sm">No foods found</span>
+              </CommandEmpty>
             ) : (
               <CommandGroup>
-                {filteredFoods.map((food) => (
+                {filteredFoods.slice(0, 8).map((food) => (
                   <CommandItem
                     key={food.code}
                     value={food.code}
                     onSelect={() => handleSelectFood(food)}
+                    className="py-2.5 px-3 cursor-pointer"
                   >
-                    {food.name}
+                    <span className="truncate">{food.name}</span>
                   </CommandItem>
                 ))}
+                {filteredFoods.length > 8 && (
+                  <div className="px-3 py-2 text-xs text-muted-foreground border-t border-border/50">
+                    +{filteredFoods.length - 8} more results
+                  </div>
+                )}
               </CommandGroup>
             )}
           </CommandList>
         )}
       </Command>
+      {/* Keyboard hints */}
+      <p className="text-xs text-muted-foreground/60 mt-2">
+        ↑↓ navigate • ↵ select • esc close
+      </p>
     </div>
   )
 }
