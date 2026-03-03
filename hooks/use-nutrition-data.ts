@@ -28,7 +28,7 @@ export function useNutritionData(): UseNutritionDataResult {
         const [nutrientsResult, metadataResult] = await Promise.all([
           supabase
             .from("rda_values")
-            .select("code, nutrient_name, value_type, rda_value, unit")
+            .select("code, nutrient_name, value_type, rda_value, unit, category")
             .order("nutrient_name"),
           supabase
             .from("nutrient_metadata")

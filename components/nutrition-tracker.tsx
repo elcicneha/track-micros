@@ -44,6 +44,27 @@ export function NutritionTracker() {
     [nutrients]
   )
 
+  const groupedNutrients = useMemo(() => {
+    const groups: Record<string, typeof validNutrients> = {}
+    for (const nutrient of validNutrients) {
+      const category = nutrient.category || "Other"
+      if (!groups[category]) groups[category] = []
+      groups[category].push(nutrient)
+    }
+
+    // Sort categories: Macros first, then alphabetically
+    const sortedCategories = Object.keys(groups).sort((a, b) => {
+      if (a.toLowerCase() === "macros") return -1
+      if (b.toLowerCase() === "macros") return 1
+      return a.localeCompare(b)
+    })
+
+    return sortedCategories.map((category) => ({
+      category,
+      nutrients: groups[category],
+    }))
+  }, [validNutrients])
+
   const completedNutrients = validNutrients.filter((nutrient) => {
     const current = totalNutrients[nutrient.code] || 0
     const target = getEffectiveRda(nutrient, USER_WEIGHT_KG)
@@ -97,7 +118,7 @@ export function NutritionTracker() {
           {/* RIGHT COLUMN - Nutrient Cards Grid */}
           <div className="space-y-2">
             <div className="flex items-center justify-between">
-              <label className="text-sm font-medium text-foreground/70">Daily Nutrients</label>
+              {/* <label className="text-sm font-medium text-foreground/70">Daily Nutrients</label> */}
               {selectedFoods.length > 0 && (
                 <span className="text-xs text-muted-foreground">
                   <span className="text-[var(--progress-high)] font-medium">{completedNutrients}</span>
@@ -105,26 +126,33 @@ export function NutritionTracker() {
                 </span>
               )}
             </div>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-                gap: "0.875rem",
-              }}
-            >
-              {validNutrients.map((nutrient, index) => (
-                <div
-                  key={nutrient.code}
-                  className="animate-fade-in-up"
-                  style={{ animationDelay: `${index * 30}ms` }}
-                >
-                  <NutrientCard
-                    name={nutrient.nutrient_name || nutrient.code}
-                    current={totalNutrients[nutrient.code] || 0}
-                    target={getEffectiveRda(nutrient, USER_WEIGHT_KG)}
-                    unit={nutrient.unit || ''}
-                  />
-                </div>
+            <div className="space-y-10">
+              {groupedNutrients.map(({ category, nutrients: groupNutrients }) => (
+                <section key={category}>
+                  <h2 className="text-sm font-medium font-sans text-muted-foreground mb-3">{category}</h2>
+                  <div
+                    style={{
+                      display: "grid",
+                      gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+                      gap: "0.875rem",
+                    }}
+                  >
+                    {groupNutrients.map((nutrient, index) => (
+                      <div
+                        key={nutrient.code}
+                        className="animate-fade-in-up"
+                        style={{ animationDelay: `${index * 30}ms` }}
+                      >
+                        <NutrientCard
+                          name={nutrient.nutrient_name || nutrient.code}
+                          current={totalNutrients[nutrient.code] || 0}
+                          target={getEffectiveRda(nutrient, USER_WEIGHT_KG)}
+                          unit={nutrient.unit || ''}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </section>
               ))}
             </div>
           </div>

@@ -18,6 +18,7 @@ export type Nutrient = {
   value_type: string | null       // Type classification
   rda_value: number | null        // Target RDA
   unit: string | null             // Measurement unit
+  category: string | null         // Grouping category (macros, vitamins, minerals, amino acids)
 }
 
 export type NutrientMetadata = {
