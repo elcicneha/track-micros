@@ -1,30 +1,31 @@
-# Nutrition tracking app
+# Food Nutrients Tracker
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+**[Try it live](https://food-nutrients-tracking.vercel.app/)** - note: there are several [known limitations](#known-limitations)
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/elcicneha-4120s-projects/v0-nutrition-tracking-app)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/lTIQb5Mj3jH)
+Most nutrition tools focus on macros - calories, protein, carbs, fat. I built this because I wanted to track my **micronutrients** specifically. I wanted to see which vitamins, minerals, and amino acids I was actually getting from my food, so I could fill gaps through diet itself rather than defaulting to supplements for everything.
 
-## Overview
+## What it does
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+- Search a database of foods and add them to your daily intake
+- See a breakdown of nutrients (vitamins, minerals, amino acids, macros) with progress bars against RDA targets
+- Color-coded progress indicators: red (<50% RDA), yellow (50-90%), green (90%+) 
 
-## Deployment
+## Tech stack
 
-Your project is live at:
+- **Next.js 16**
+- **Supabase** 
+- **Tailwind CSS v4** 
+- **shadcn/ui** 
 
-**[https://vercel.com/elcicneha-4120s-projects/v0-nutrition-tracking-app](https://vercel.com/elcicneha-4120s-projects/v0-nutrition-tracking-app)**
+## Data sources
 
-## Build your app
+- **Food nutrient data** from IFCT (Indian Food Composition Tables)
+- **RDA values** from FSSAI (Food Safety and Standards Authority of India)
 
-Continue building your app on:
+## Known limitations
 
-**[https://v0.app/chat/lTIQb5Mj3jH](https://v0.app/chat/lTIQb5Mj3jH)**
-
-## How It Works
-
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+- **Incomplete food database** - Many common food items are missing from the database. Coverage needs to be significantly expanded.
+- **Missing B12 data** - Vitamin B12 values have not been accounted for yet.
+- **No personalised RDA** - Currently uses a single set of RDA values. There are no toggles to adjust recommendations based on your age, gender, or activity level.
+- **No serving size options** - All quantities are entered in grams. I want to add household measures (e.g., "1 medium egg", "1 cup", "1 slice") with predefined default weights so you don't have to look up gram values for everything.
+- **Not reviewed by a nutritionist** - The nutrient data and RDA values have not been verified by a nutritionist. Use this as a rough guide, not medical advice.
