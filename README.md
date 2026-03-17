@@ -1,10 +1,10 @@
-# Food Nutrients Tracker
+# Track your micro-nutrients
 
 **[Try it live](https://track-micros.vercel.app/)** - note: there are several [known limitations](#known-limitations)
 
 Most nutrition tools focus on macros - calories, protein, carbs, fat. I built this because I wanted to track my **micronutrients** specifically. I wanted to see which vitamins, minerals, and amino acids I was actually getting from my food, so I could fill gaps through diet itself rather than defaulting to supplements for everything.
 
-![Food Nutrients Tracker](public/nutrition-tracker.png)
+![Track Micros](public/nutrition-tracker.png)
 
 ## What it does
 
