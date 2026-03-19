@@ -93,7 +93,7 @@ export function FoodSearch({ foods, selectedFoodCodes, onSelectFood }: FoodSearc
         />
         {searchQuery && isOpen && (
           <CommandList
-            className="absolute top-full left-0 right-0 z-50 mt-1.5 max-h-56 rounded-xl border border-border bg-card shadow-xl overflow-y-auto animate-fade-in-up"
+            className="absolute top-full left-0 right-0 z-50 mt-1.5 max-h-72 rounded-xl border border-border bg-card shadow-xl overflow-y-auto animate-fade-in-up"
             style={{ animationDuration: '150ms' }}
           >
             {filteredFoods.length === 0 ? (
@@ -103,7 +103,7 @@ export function FoodSearch({ foods, selectedFoodCodes, onSelectFood }: FoodSearc
               </CommandEmpty>
             ) : (
               <CommandGroup>
-                {filteredFoods.slice(0, 8).map((food) => (
+                {filteredFoods.map((food) => (
                   <CommandItem
                     key={food.code}
                     value={food.code}
@@ -113,11 +113,6 @@ export function FoodSearch({ foods, selectedFoodCodes, onSelectFood }: FoodSearc
                     <span className="truncate">{food.name}</span>
                   </CommandItem>
                 ))}
-                {filteredFoods.length > 8 && (
-                  <div className="px-3 py-2 text-xs text-muted-foreground border-t border-border/50">
-                    +{filteredFoods.length - 8} more results
-                  </div>
-                )}
               </CommandGroup>
             )}
           </CommandList>
