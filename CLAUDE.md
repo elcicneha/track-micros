@@ -39,12 +39,15 @@ This is a Next.js 16 nutrition tracking application with local JSON data files. 
 - `lib/data/index.ts` - Barrel export; change this one file to swap backends
 
 **Data Files (`public/data/`):**
-- `foods.json` - Food items with nutrient values as dynamic columns (nutrient codes like `retol`, `thia`, `protcnt`)
+- `foods.json` - Complete food data with ALL nutrient columns (355 cols, ~3.4MB). Full Supabase mirror. Used by the `/explore` page.
+- `foods-core.json` - Slim version with only RDA nutrient columns (41 cols, ~380KB). Used by the main tracker page for fast loading.
 - `rda-values.json` - RDA targets with fields: `code`, `nutrient_name`, `value_type`, `rda_value`, `unit`, `category`
 - `nutrient-metadata.json` - Category and unit information: `id`, `category`, `code`, `name`, `unit`
+- To re-export from Supabase: `npx tsx scripts/export-supabase-data.ts` (generates all files including both foods JSONs)
 
 **Data Fetching:**
-- `hooks/use-nutrition-data.ts` - Fetches via `DataSource`, builds conversion and category maps
+- `hooks/use-nutrition-data.ts` - Fetches `foods-core.json` via `DataSource`, builds conversion and category maps
+- `/explore` page fetches `foods.json` directly for full nutrient data
 
 **Nutrient Calculation:**
 - `lib/nutrition-utils.ts` - `calculateNutrientTotals()` (sums with unit conversion), `getEffectiveRda()` (fixed vs per_kg)

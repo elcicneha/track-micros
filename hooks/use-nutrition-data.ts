@@ -8,6 +8,7 @@ import { buildConversionMap } from "@/lib/unit-conversion"
 type UseNutritionDataResult = {
   foods: Food[]
   nutrients: Nutrient[]
+  nutrientMetadata: NutrientMetadata[]
   conversionMap: Record<string, number>
   categoryMap: Record<string, string>
   loading: boolean
@@ -64,5 +65,5 @@ export function useNutritionData(): UseNutritionDataResult {
     return map
   }, [nutrientMetadata])
 
-  return { foods, nutrients, conversionMap, categoryMap, loading, error }
+  return { foods, nutrients, nutrientMetadata, conversionMap, categoryMap, loading, error }
 }

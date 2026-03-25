@@ -1,9 +1,11 @@
 "use client"
 
+import Link from "next/link"
 import { Card } from "@/components/ui/card"
 import { cn } from "@/lib/utils"
 
 interface NutrientCardProps {
+  code: string
   name: string
   current: number
   target: number
@@ -11,7 +13,7 @@ interface NutrientCardProps {
   icon?: string
 }
 
-export function NutrientCard({ name, current, target, unit, icon }: NutrientCardProps) {
+export function NutrientCard({ code, name, current, target, unit, icon }: NutrientCardProps) {
   const percentage = Math.round((current / target) * 100)
   const clampedPercentage = Math.min(percentage, 100)
   const isComplete = percentage >= 90
@@ -36,7 +38,12 @@ export function NutrientCard({ name, current, target, unit, icon }: NutrientCard
         <div className="flex items-start justify-between gap-2">
           <div className="flex items-center gap-2 min-w-0">
             {icon && <span className="text-xl flex-shrink-0">{icon}</span>}
-            <h3 className="font-medium text-foreground text-sm leading-tight truncate">{name}</h3>
+            <Link
+              href={`/explore#${code}`}
+              className="font-medium text-foreground text-sm leading-tight truncate hover:underline hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm"
+            >
+              {name}
+            </Link>
           </div>
           <span className={cn(
             "text-lg font-bold tabular-nums flex-shrink-0",

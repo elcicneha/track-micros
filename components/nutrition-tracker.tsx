@@ -138,6 +138,7 @@ export function NutritionTracker() {
                         style={{ animationDelay: `${index * 30}ms` }}
                       >
                         <NutrientCard
+                          code={nutrient.code}
                           name={nutrient.nutrient_name || nutrient.code}
                           current={totalNutrients[nutrient.code] || 0}
                           target={getEffectiveRda(nutrient, USER_WEIGHT_KG)}
