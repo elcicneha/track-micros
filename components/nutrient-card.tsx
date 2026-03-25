@@ -41,8 +41,7 @@ export function NutrientCard({ code, name, current, target, unit, icon }: Nutrie
             {icon && <span className="text-xl flex-shrink-0">{icon}</span>}
             <button
               onClick={() => {
-                sessionStorage.setItem("exploreNutrient", code)
-                router.push("/explore")
+                router.push(`/explore?nutrient=${code}`)
               }}
               className="font-medium text-foreground text-sm leading-tight truncate hover:underline hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm"
             >

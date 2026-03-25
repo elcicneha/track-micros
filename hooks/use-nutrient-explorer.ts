@@ -37,6 +37,15 @@ export function useNutrientExplorer({
   const [selectedNutrientCode, setSelectedNutrientCode] = useState<string>(
     initialNutrientCode || "enerc"
   )
+
+  // Sync state when URL param changes (browser back/forward)
+  useEffect(() => {
+    if (initialNutrientCode && initialNutrientCode !== selectedNutrientCode) {
+      setSelectedNutrientCode(initialNutrientCode)
+      setSortConfig({ column: initialNutrientCode, direction: "desc" })
+    }
+  }, [initialNutrientCode]) // eslint-disable-line react-hooks/exhaustive-deps
+
   const [additionalColumns, setAdditionalColumns] = useState<string[]>(() => {
     try {
       const stored = sessionStorage.getItem("explore-columns")

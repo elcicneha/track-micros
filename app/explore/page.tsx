@@ -1,12 +1,17 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback } from "react"
+import { useSearchParams, useRouter } from "next/navigation"
 import { useNutrientExplorer } from "@/hooks/use-nutrient-explorer"
 import { NutrientExplorerSidebar } from "@/components/nutrient-explorer-sidebar"
 import { NutrientExplorerTable } from "@/components/nutrient-explorer-table"
 import type { Food, Nutrient, NutrientMetadata } from "@/lib/types"
 
 export default function ExplorePage() {
+  const searchParams = useSearchParams()
+  const router = useRouter()
+  const nutrientParam = searchParams.get("nutrient")
+
   const [foods, setFoods] = useState<Food[]>([])
   const [nutrients, setNutrients] = useState<Nutrient[]>([])
   const [nutrientMetadata, setNutrientMetadata] = useState<NutrientMetadata[]>([])
@@ -36,25 +41,22 @@ export default function ExplorePage() {
     visibleColumns,
     sortConfig,
     additionalColumns,
-    selectNutrient,
+    selectNutrient: selectNutrientInternal,
     toggleColumn,
     toggleSort,
     removeColumn,
   } = useNutrientExplorer({
-    initialNutrientCode: null,
+    initialNutrientCode: nutrientParam,
     foods,
     nutrientMetadata,
     nutrients,
   })
 
-  // Pre-select nutrient passed from the tracker page via sessionStorage
-  useEffect(() => {
-    const code = sessionStorage.getItem("exploreNutrient")
-    if (code) {
-      selectNutrient(code)
-      sessionStorage.removeItem("exploreNutrient")
-    }
-  }, [selectNutrient])
+  // Replace (not push) URL so sidebar clicks don't pollute history
+  const selectNutrient = useCallback((code: string) => {
+    selectNutrientInternal(code)
+    router.replace(`/explore?nutrient=${code}`, { scroll: false })
+  }, [selectNutrientInternal, router])
 
   if (loading) {
     return (
