@@ -1,5 +1,6 @@
 "use client"
 
+import { useRef, useEffect } from "react"
 import { ArrowUpIcon, ArrowDownIcon, ArrowUpDownIcon, XIcon } from "lucide-react"
 import {
   Table,
@@ -53,6 +54,21 @@ export function NutrientExplorerTable({
   onToggleColumn,
   onRemoveColumn,
 }: NutrientExplorerTableProps) {
+  const tableWrapperRef = useRef<HTMLDivElement>(null)
+  const prevColumnCount = useRef(visibleColumns.length)
+
+  useEffect(() => {
+    if (visibleColumns.length > prevColumnCount.current) {
+      const container = tableWrapperRef.current?.querySelector<HTMLElement>(
+        '[data-slot="table-container"]'
+      )
+      if (container) {
+        container.scrollTo({ left: container.scrollWidth, behavior: "smooth" })
+      }
+    }
+    prevColumnCount.current = visibleColumns.length
+  }, [visibleColumns.length])
+
   return (
     <div className="flex flex-col h-full">
       {/* Toolbar */}
@@ -63,16 +79,10 @@ export function NutrientExplorerTable({
             {filteredFoods.length}
           </span>
         </div>
-        <ColumnPicker
-          groupedNutrients={groupedNutrients}
-          selectedColumns={additionalColumns}
-          primaryColumn={selectedNutrientCode}
-          onToggleColumn={onToggleColumn}
-        />
       </div>
 
       {/* Table */}
-      <div className="flex-1 min-h-0">
+      <div ref={tableWrapperRef} className="flex-1 min-h-0">
         <Table>
           <TableHeader className="sticky top-0 z-20">
             <TableRow className="bg-muted hover:bg-muted">
@@ -122,6 +132,14 @@ export function NutrientExplorerTable({
                   </div>
                 </TableHead>
               ))}
+              <TableHead className="w-full bg-muted">
+                <ColumnPicker
+                  groupedNutrients={groupedNutrients}
+                  selectedColumns={additionalColumns}
+                  primaryColumn={selectedNutrientCode}
+                  onToggleColumn={onToggleColumn}
+                />
+              </TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -148,6 +166,7 @@ export function NutrientExplorerTable({
                     </TableCell>
                   )
                 })}
+                <TableCell className="w-full" />
               </TableRow>
             ))}
           </TableBody>
