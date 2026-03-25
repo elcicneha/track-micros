@@ -74,8 +74,15 @@ export function SelectedFoodsList({
         ? "scroll-fade-bottom"
         : ""
 
+  const scrollFadeSize = "3rem"
+
   return (
     <div className="flex-1 flex flex-col min-h-0 gap-3">
+      <style>{`
+        .scroll-fade-bottom { mask-image: linear-gradient(to bottom, black 0%, black calc(100% - ${scrollFadeSize}), transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 0%, black calc(100% - ${scrollFadeSize}), transparent 100%); }
+        .scroll-fade-top { mask-image: linear-gradient(to bottom, transparent 0%, black ${scrollFadeSize}, black 100%); -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black ${scrollFadeSize}, black 100%); }
+        .scroll-fade-both { mask-image: linear-gradient(to bottom, transparent 0%, black ${scrollFadeSize}, black calc(100% - ${scrollFadeSize}), transparent 100%); -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black ${scrollFadeSize}, black calc(100% - ${scrollFadeSize}), transparent 100%); }
+      `}</style>
       <div className="flex items-center justify-between">
         <label className="text-sm font-medium text-foreground/70">
           Selected Foods

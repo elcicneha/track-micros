@@ -99,7 +99,7 @@ export function NutritionTracker() {
         {/* Responsive Layout: stacked on mobile, two-column on md+ */}
         <div className="grid grid-cols-1 md:grid-cols-[minmax(280px,1fr)_1fr] lg:grid-cols-[minmax(340px,1fr)_2fr] gap-6 md:gap-8">
           {/* LEFT COLUMN - Sticky on desktop */}
-          <div className="flex flex-col gap-4 sm:gap-6 md:sticky md:top-8 md:self-start md:max-h-[calc(100vh-4rem)] sticky-sidebar">
+          <div className="flex flex-col gap-4 sm:gap-6 md:sticky md:top-8 md:self-start md:max-h-[calc(100vh-4rem)] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {/* Search Bar */}
             <FoodSearch
               foods={foods}

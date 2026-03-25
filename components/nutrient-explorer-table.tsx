@@ -34,11 +34,11 @@ function SortIcon({ column, sortConfig }: {
   sortConfig: { column: string; direction: "asc" | "desc" }
 }) {
   if (sortConfig.column !== column) {
-    return <ArrowUpDownIcon className="size-3.5 text-muted-foreground/50" />
+    return <ArrowUpDownIcon className="size-3.5 text-muted-foreground/40 shrink-0" />
   }
   return sortConfig.direction === "desc"
-    ? <ArrowDownIcon className="size-3.5" />
-    : <ArrowUpIcon className="size-3.5" />
+    ? <ArrowDownIcon className="size-3.5 shrink-0" />
+    : <ArrowUpIcon className="size-3.5 shrink-0" />
 }
 
 export function NutrientExplorerTable({
@@ -55,12 +55,12 @@ export function NutrientExplorerTable({
 }: NutrientExplorerTableProps) {
   return (
     <div className="flex flex-col h-full">
-      {/* Header */}
-      <div className="p-4 border-b flex items-center justify-between gap-4 flex-wrap">
-        <div className="flex items-center gap-3">
-          <h2 className="text-lg font-medium text-foreground">{selectedNutrientName}</h2>
-          <span className="text-xs text-muted-foreground bg-muted px-2 py-0.5 rounded-full">
-            {filteredFoods.length} foods
+      {/* Toolbar */}
+      <div className="px-4 py-2 border-b flex items-center justify-between gap-3">
+        <div className="flex items-center gap-2 min-w-0">
+          <h2 className="text-sm font-medium text-foreground truncate">{selectedNutrientName}</h2>
+          <span className="text-xs text-muted-foreground bg-muted px-1.5 py-0.5 rounded-full tabular-nums shrink-0">
+            {filteredFoods.length}
           </span>
         </div>
         <ColumnPicker
@@ -72,27 +72,34 @@ export function NutrientExplorerTable({
       </div>
 
       {/* Table */}
-      <div className="flex-1 overflow-auto">
+      <div className="flex-1 min-h-0">
         <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead className="sticky left-0 bg-background z-10">
+          <TableHeader className="sticky top-0 z-20">
+            <TableRow className="bg-muted hover:bg-muted">
+              <TableHead data-pinned className="bg-muted min-w-[200px] max-w-[300px]">
                 <button
                   onClick={() => onToggleSort("name")}
                   className="flex items-center gap-1 hover:text-foreground transition-colors cursor-pointer"
                 >
-                  Food
+                  Food <span className="text-muted-foreground text-xs">(per 100g)</span>
                   <SortIcon column="name" sortConfig={sortConfig} />
                 </button>
               </TableHead>
-              {visibleColumns.map((col) => (
-                <TableHead key={col.code} className="text-right">
+              {visibleColumns.map((col, i) => (
+                <TableHead
+                  key={col.code}
+                  className={cn(
+                    "text-right bg-muted group",
+                    sortConfig.column === col.code && "bg-muted/80",
+                    i === visibleColumns.length - 1 && "pr-6"
+                  )}
+                >
                   <div className="flex items-center justify-end gap-1">
                     {!col.isPrimary && (
                       <Button
                         variant="ghost"
                         size="icon"
-                        className="size-5 text-muted-foreground hover:text-destructive"
+                        className="size-5 text-muted-foreground/0 group-hover:text-muted-foreground hover:!text-destructive transition-colors"
                         onClick={() => onRemoveColumn(col.code)}
                       >
                         <XIcon className="size-3" />
@@ -105,10 +112,13 @@ export function NutrientExplorerTable({
                         col.isPrimary && "font-semibold"
                       )}
                     >
-                      <span>{col.name}</span>
+                      {col.name}
                       <span className="text-muted-foreground text-xs">({col.unit})</span>
                       <SortIcon column={col.code} sortConfig={sortConfig} />
                     </button>
+                    {col.isPrimary && (
+                      <span className="text-xs text-muted-foreground ml-1">primary</span>
+                    )}
                   </div>
                 </TableHead>
               ))}
@@ -116,17 +126,24 @@ export function NutrientExplorerTable({
           </TableHeader>
           <TableBody>
             {filteredFoods.map((food) => (
-              <TableRow key={food.code}>
-                <TableCell className="sticky left-0 bg-background z-10 font-medium max-w-[300px] truncate">
+              <TableRow key={food.code} className="hover:bg-transparent">
+                <TableCell data-pinned className="font-medium max-w-[300px] truncate">
                   {food.name}
                 </TableCell>
-                {visibleColumns.map((col) => {
+                {visibleColumns.map((col, i) => {
                   const val = food[col.code]
                   const numVal = typeof val === "number" ? val : 0
                   return (
-                    <TableCell key={col.code} className="text-right tabular-nums">
+                    <TableCell
+                      key={col.code}
+                      className={cn(
+                        "text-right tabular-nums",
+                        sortConfig.column === col.code && "bg-muted/30",
+                        i === visibleColumns.length - 1 && "pr-6"
+                      )}
+                    >
                       {numVal > 0 ? formatNutrientValue(numVal) : (
-                        <span className="text-muted-foreground">-</span>
+                        <span className="text-muted-foreground/40">—</span>
                       )}
                     </TableCell>
                   )

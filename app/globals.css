@@ -4,9 +4,6 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-
-  --scroll-fade-size: 3rem;
-
   /* Warm Botanical Light Theme */
   --background: oklch(0.98 0.008 85);
   --foreground: oklch(0.22 0.02 45);
@@ -166,48 +163,6 @@
   }
 }
 
-@keyframes pulse-glow {
-
-  0%,
-  100% {
-    box-shadow: 0 0 0 0 oklch(0.65 0.12 145 / 0);
-  }
-
-  50% {
-    box-shadow: 0 0 12px 4px oklch(0.65 0.12 145 / 0.3);
-  }
-}
-
 .animate-fade-in-up {
   animation: fade-in-up 0.3s ease-out forwards;
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 1.5s ease-in-out;
-}
-
-/* Clean scrollbar for sticky sidebar */
-.sticky-sidebar::-webkit-scrollbar {
-  width: 0;
-  background: transparent;
-}
-
-.sticky-sidebar {
-  scrollbar-width: none;
-}
-
-/* Scroll fade masks - bidirectional, applied conditionally via JS */
-.scroll-fade-bottom {
-  mask-image: linear-gradient(to bottom, black 0%, black calc(100% - var(--scroll-fade-size)), transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, black 0%, black calc(100% - var(--scroll-fade-size)), transparent 100%);
-}
-
-.scroll-fade-top {
-  mask-image: linear-gradient(to bottom, transparent 0%, black var(--scroll-fade-size), black 100%);
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black var(--scroll-fade-size), black 100%);
-}
-
-.scroll-fade-both {
-  mask-image: linear-gradient(to bottom, transparent 0%, black var(--scroll-fade-size), black calc(100% - var(--scroll-fade-size)), transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black var(--scroll-fade-size), black calc(100% - var(--scroll-fade-size)), transparent 100%);
 }
