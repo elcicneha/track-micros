@@ -7,19 +7,10 @@ import { NutrientExplorerTable } from "@/components/nutrient-explorer-table"
 import type { Food, Nutrient, NutrientMetadata } from "@/lib/types"
 
 export default function ExplorePage() {
-  const [initialNutrient, setInitialNutrient] = useState<string | null>(null)
   const [foods, setFoods] = useState<Food[]>([])
   const [nutrients, setNutrients] = useState<Nutrient[]>([])
   const [nutrientMetadata, setNutrientMetadata] = useState<NutrientMetadata[]>([])
   const [loading, setLoading] = useState(true)
-
-  // Read hash fragment once on mount
-  useEffect(() => {
-    const hash = window.location.hash.slice(1)
-    if (hash) {
-      setInitialNutrient(hash)
-    }
-  }, [])
 
   // Load full foods.json (all columns) for the explore page
   useEffect(() => {
@@ -50,11 +41,20 @@ export default function ExplorePage() {
     toggleSort,
     removeColumn,
   } = useNutrientExplorer({
-    initialNutrientCode: initialNutrient,
+    initialNutrientCode: null,
     foods,
     nutrientMetadata,
     nutrients,
   })
+
+  // Pre-select nutrient passed from the tracker page via sessionStorage
+  useEffect(() => {
+    const code = sessionStorage.getItem("exploreNutrient")
+    if (code) {
+      selectNutrient(code)
+      sessionStorage.removeItem("exploreNutrient")
+    }
+  }, [selectNutrient])
 
   if (loading) {
     return (
