@@ -7,7 +7,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { useRovingTabindex } from "@/hooks/use-roving-tabindex"
 import { cn } from "@/lib/utils"
 
-import type { Food } from "@/lib/supabase"
+import type { Food } from "@/lib/types"
 
 type SelectedFood = Food & { quantity: number }
 

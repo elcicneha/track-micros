@@ -1,4 +1,4 @@
-import type { Nutrient } from "./supabase"
+import type { Nutrient } from "./types"
 
 type FoodWithQuantity = {
   quantity: number

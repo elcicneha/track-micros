@@ -1,11 +1,5 @@
-import { createClient } from '@supabase/supabase-js'
+// Domain types for nutrition data — independent of data source
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-
-export const supabase = createClient(supabaseUrl, supabaseAnonKey)
-
-// Types for database tables
 export type Food = {
   code: string        // Primary key
   name: string

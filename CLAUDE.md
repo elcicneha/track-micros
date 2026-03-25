@@ -13,11 +13,11 @@ npm run start    # Start production server
 
 ## Architecture Overview
 
-This is a Next.js 16 nutrition tracking application that uses Supabase as the backend database. Users can search and select foods to track their daily nutrient intake against RDA (Recommended Daily Allowance) values.
+This is a Next.js 16 nutrition tracking application with local JSON data files. Users can search and select foods to track their daily nutrient intake against RDA (Recommended Daily Allowance) values.
 
 ### Tech Stack
 - **Framework**: Next.js 16 with App Router
-- **Database**: Supabase (PostgreSQL)
+- **Data**: Local JSON files in `public/data/`, served via fetch with browser caching
 - **Styling**: Tailwind CSS v4 with CSS custom properties for theming
 - **UI Components**: Radix UI primitives with custom shadcn/ui-style wrappers in `components/ui/`
 
@@ -28,15 +28,20 @@ This is a Next.js 16 nutrition tracking application that uses Supabase as the ba
 - `components/nutrition-tracker.tsx` - Main component handling food search, selection, and nutrient calculation
 - `components/nutrient-card.tsx` - Displays individual nutrient progress with color-coded bars (red <50%, yellow 50-90%, green ≥90%)
 
-**Database Integration:**
-- `lib/supabase.ts` - Supabase client initialization and TypeScript types for `Food`, `Nutrient`, and `NutrientMetadata`
-- The app queries three Supabase tables:
-  - `foods` - Food items with nutrient values as dynamic columns (nutrient codes like `retol`, `thia`, `protcnt`, etc.)
-  - `rda_values` - RDA targets with columns: `code`, `nutrient_name`, `value_type`, `rda_value`, `unit`
-  - `nutrient_metadata` - Category and unit information with columns: `id`, `category`, `code`, `name`, `unit`
+**Data Layer (abstracted for easy swapping):**
+- `lib/types.ts` - Domain types: `Food`, `Nutrient`, `NutrientMetadata`
+- `lib/data/data-source.ts` - `DataSource` interface with `fetchNutritionData()` method
+- `lib/data/json-data-source.ts` - JSON implementation (fetches from `public/data/`)
+- `lib/data/index.ts` - Barrel export; change this one file to swap backends
+- To switch data sources (e.g., back to Supabase or a REST API), implement `DataSource` and update `lib/data/index.ts`
+
+**Data Files (`public/data/`):**
+- `foods.json` - Food items with nutrient values as dynamic columns (nutrient codes like `retol`, `thia`, `protcnt`, etc.)
+- `rda-values.json` - RDA targets with fields: `code`, `nutrient_name`, `value_type`, `rda_value`, `unit`, `category`
+- `nutrient-metadata.json` - Category and unit information with fields: `id`, `category`, `code`, `name`, `unit`
 
 **Data Fetching:**
-- `hooks/use-nutrition-data.ts` - Custom hook that fetches all data from Supabase in parallel, builds conversion and category maps
+- `hooks/use-nutrition-data.ts` - Custom hook that fetches data via `DataSource`, builds conversion and category maps
 
 **Nutrient Calculation:**
 - `lib/nutrition-utils.ts` - Core calculation logic:
@@ -52,9 +57,7 @@ This is a Next.js 16 nutrition tracking application that uses Supabase as the ba
 
 ### Environment Variables
 
-Required in `.env.local`:
-- `NEXT_PUBLIC_SUPABASE_URL` - Supabase project URL
-- `NEXT_PUBLIC_SUPABASE_ANON_KEY` - Supabase anonymous key
+No environment variables are required — the app reads data from local JSON files in `public/data/`.
 
 ### Styling Conventions
 

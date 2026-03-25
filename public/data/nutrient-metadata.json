@@ -1,0 +1,1360 @@
+[
+  {
+    "id": 75,
+    "category": "Amino acid profile",
+    "code": "ala",
+    "name": "Alanine",
+    "unit": "g"
+  },
+  {
+    "id": 76,
+    "category": "Amino acid profile",
+    "code": "arg",
+    "name": "Arginine",
+    "unit": "g"
+  },
+  {
+    "id": 77,
+    "category": "Amino acid profile",
+    "code": "asp",
+    "name": "Aspartic acid",
+    "unit": "g"
+  },
+  {
+    "id": 78,
+    "category": "Amino acid profile",
+    "code": "glu",
+    "name": "Glutamic acid ",
+    "unit": "g"
+  },
+  {
+    "id": 79,
+    "category": "Amino acid profile",
+    "code": "gly",
+    "name": "Glycine",
+    "unit": "g"
+  },
+  {
+    "id": 80,
+    "category": "Amino acid profile",
+    "code": "pro",
+    "name": "Proline",
+    "unit": "g"
+  },
+  {
+    "id": 81,
+    "category": "Amino acid profile",
+    "code": "ser",
+    "name": "Serine",
+    "unit": "g"
+  },
+  {
+    "id": 82,
+    "category": "Amino acid profile",
+    "code": "tyr",
+    "name": "Tyrosine",
+    "unit": "g"
+  },
+  {
+    "id": 83,
+    "category": "Amino acid profile",
+    "code": "his",
+    "name": "Histidine",
+    "unit": "g"
+  },
+  {
+    "id": 84,
+    "category": "Amino acid profile",
+    "code": "ile",
+    "name": "Isoleucine",
+    "unit": "g"
+  },
+  {
+    "id": 85,
+    "category": "Amino acid profile",
+    "code": "leu",
+    "name": "Leucine",
+    "unit": "g"
+  },
+  {
+    "id": 86,
+    "category": "Amino acid profile",
+    "code": "lys",
+    "name": "Lysine",
+    "unit": "g"
+  },
+  {
+    "id": 87,
+    "category": "Amino acid profile",
+    "code": "met",
+    "name": "Methionine",
+    "unit": "g"
+  },
+  {
+    "id": 88,
+    "category": "Amino acid profile",
+    "code": "cys",
+    "name": "Cystine",
+    "unit": "g"
+  },
+  {
+    "id": 89,
+    "category": "Amino acid profile",
+    "code": "phe",
+    "name": "Phenylalanine",
+    "unit": "g"
+  },
+  {
+    "id": 90,
+    "category": "Amino acid profile",
+    "code": "thr",
+    "name": "Threonine",
+    "unit": "g"
+  },
+  {
+    "id": 91,
+    "category": "Amino acid profile",
+    "code": "trp",
+    "name": "Tryptophan",
+    "unit": "g"
+  },
+  {
+    "id": 92,
+    "category": "Amino acid profile",
+    "code": "val",
+    "name": "Valine",
+    "unit": "g"
+  },
+  {
+    "id": 93,
+    "category": "Carotenoids",
+    "code": "lutn",
+    "name": "Lutein",
+    "unit": "µg"
+  },
+  {
+    "id": 94,
+    "category": "Carotenoids",
+    "code": "zea",
+    "name": "Zeaxanthin",
+    "unit": "µg"
+  },
+  {
+    "id": 95,
+    "category": "Carotenoids",
+    "code": "lycpn",
+    "name": "Lycopene",
+    "unit": "µg"
+  },
+  {
+    "id": 96,
+    "category": "Carotenoids",
+    "code": "crypxb",
+    "name": "β-Cryptoxanthin",
+    "unit": "µg"
+  },
+  {
+    "id": 97,
+    "category": "Carotenoids",
+    "code": "cartg",
+    "name": "γ-Carotene",
+    "unit": "µg"
+  },
+  {
+    "id": 98,
+    "category": "Carotenoids",
+    "code": "carta",
+    "name": "α-Carotene",
+    "unit": "µg"
+  },
+  {
+    "id": 99,
+    "category": "Carotenoids",
+    "code": "cartb",
+    "name": "β-Carotene",
+    "unit": "µg"
+  },
+  {
+    "id": 100,
+    "category": "Carotenoids",
+    "code": "cartoid",
+    "name": "Total carotenoids",
+    "unit": "µg"
+  },
+  {
+    "id": 101,
+    "category": "Fat-soluble vitamins",
+    "code": "retol",
+    "name": "Retinol",
+    "unit": "µg"
+  },
+  {
+    "id": 102,
+    "category": "Fat-soluble vitamins",
+    "code": "ergcal",
+    "name": "Ergocalciferol (D2)",
+    "unit": "µg"
+  },
+  {
+    "id": 103,
+    "category": "Fat-soluble vitamins",
+    "code": "chocal",
+    "name": "Cholecalciferol (D3)",
+    "unit": "µg"
+  },
+  {
+    "id": 104,
+    "category": "Fat-soluble vitamins",
+    "code": "doh25",
+    "name": "25-OH-D3",
+    "unit": "µg"
+  },
+  {
+    "id": 105,
+    "category": "Fat-soluble vitamins",
+    "code": "tocpha",
+    "name": "Tocopherols alpha",
+    "unit": "mg"
+  },
+  {
+    "id": 106,
+    "category": "Fat-soluble vitamins",
+    "code": "tocphb",
+    "name": "Tocopherols beta",
+    "unit": "mg"
+  },
+  {
+    "id": 107,
+    "category": "Fat-soluble vitamins",
+    "code": "tocphg",
+    "name": "Tocopherols gamma",
+    "unit": "mg"
+  },
+  {
+    "id": 108,
+    "category": "Fat-soluble vitamins",
+    "code": "tocphd",
+    "name": "Tocopherols delta",
+    "unit": "mg"
+  },
+  {
+    "id": 109,
+    "category": "Fat-soluble vitamins",
+    "code": "toctra",
+    "name": "Tocotrienols alpha",
+    "unit": "mg"
+  },
+  {
+    "id": 110,
+    "category": "Fat-soluble vitamins",
+    "code": "toctrb",
+    "name": "Tocotrienols beta",
+    "unit": "mg"
+  },
+  {
+    "id": 111,
+    "category": "Fat-soluble vitamins",
+    "code": "toctrg",
+    "name": "Tocotrienols gamma",
+    "unit": "mg"
+  },
+  {
+    "id": 112,
+    "category": "Fat-soluble vitamins",
+    "code": "toctrd",
+    "name": "Tocotrienols delta",
+    "unit": "mg"
+  },
+  {
+    "id": 113,
+    "category": "Fat-soluble vitamins",
+    "code": "vite",
+    "name": "α-Tocopherol equivalent ",
+    "unit": "mg"
+  },
+  {
+    "id": 114,
+    "category": "Fat-soluble vitamins",
+    "code": "vitk1",
+    "name": "Phylloquinones (K1)",
+    "unit": "µg"
+  },
+  {
+    "id": 115,
+    "category": "Fat-soluble vitamins",
+    "code": "vitk2",
+    "name": "Menaquinones (K2)",
+    "unit": "µg"
+  },
+  {
+    "id": 116,
+    "category": "Fatty acid profile",
+    "code": "f10d0",
+    "name": "Capric (C10:0)",
+    "unit": "mg"
+  },
+  {
+    "id": 117,
+    "category": "Fatty acid profile",
+    "code": "f12d0",
+    "name": "Lauric (C12:0)",
+    "unit": "mg"
+  },
+  {
+    "id": 118,
+    "category": "Fatty acid profile",
+    "code": "f14d0",
+    "name": "Myristic (C14:0)",
+    "unit": "mg"
+  },
+  {
+    "id": 119,
+    "category": "Fatty acid profile",
+    "code": "f16d0",
+    "name": "Palmitic (C16:0)",
+    "unit": "mg"
+  },
+  {
+    "id": 120,
+    "category": "Fatty acid profile",
+    "code": "f18d0",
+    "name": "Stearic (C18:0)",
+    "unit": "mg"
+  },
+  {
+    "id": 121,
+    "category": "Fatty acid profile",
+    "code": "f20d0",
+    "name": "Arachidic (C20:0)",
+    "unit": "mg"
+  },
+  {
+    "id": 122,
+    "category": "Fatty acid profile",
+    "code": "f22d0",
+    "name": "Behenic (C22:0)",
+    "unit": "mg"
+  },
+  {
+    "id": 123,
+    "category": "Fatty acid profile",
+    "code": "f24d0",
+    "name": "Lignoceric (C24:0)",
+    "unit": "mg"
+  },
+  {
+    "id": 124,
+    "category": "Fatty acid profile",
+    "code": "f14d1cn5",
+    "name": "Myristoleic (C14:1)",
+    "unit": "mg"
+  },
+  {
+    "id": 125,
+    "category": "Fatty acid profile",
+    "code": "f16d1cn7",
+    "name": "Palmitoleic (C16:1)",
+    "unit": "mg"
+  },
+  {
+    "id": 126,
+    "category": "Fatty acid profile",
+    "code": "f18d1cn9",
+    "name": "Oleic (C18:1n9)",
+    "unit": "mg"
+  },
+  {
+    "id": 127,
+    "category": "Fatty acid profile",
+    "code": "f20d1cn9",
+    "name": "Eicosenoic (C20:1n9)",
+    "unit": "mg"
+  },
+  {
+    "id": 128,
+    "category": "Fatty acid profile",
+    "code": "f22d1cn9",
+    "name": "Erucic (C22:1n9)",
+    "unit": "mg"
+  },
+  {
+    "id": 129,
+    "category": "Fatty acid profile",
+    "code": "f24d1cn9",
+    "name": "Nervonic (C24:1n9)",
+    "unit": "mg"
+  },
+  {
+    "id": 130,
+    "category": "Fatty acid profile",
+    "code": "f18d2cn6",
+    "name": "Linoleic (C18:2n6)",
+    "unit": "mg"
+  },
+  {
+    "id": 131,
+    "category": "Fatty acid profile",
+    "code": "f20d2n6",
+    "name": "Eicosadienoic (C20:2)",
+    "unit": "mg"
+  },
+  {
+    "id": 132,
+    "category": "Fatty acid profile",
+    "code": "f18d3n3",
+    "name": "α-Linolenic (C18:3n3)",
+    "unit": "mg"
+  },
+  {
+    "id": 133,
+    "category": "Fatty acid profile",
+    "code": "f20d4n6",
+    "name": "Arachidonic (C20:4n6)",
+    "unit": "mg"
+  },
+  {
+    "id": 134,
+    "category": "Fatty acid profile",
+    "code": "fasat",
+    "name": "Total saturated fatty acids (TSFA)",
+    "unit": "mg"
+  },
+  {
+    "id": 135,
+    "category": "Fatty acid profile",
+    "code": "fams",
+    "name": "Total monounsaturated fatty acids (TMUFA) ",
+    "unit": "mg"
+  },
+  {
+    "id": 136,
+    "category": "Fatty acid profile",
+    "code": "fapu",
+    "name": "Total polyunsaturated fatty acids (TPUFA)",
+    "unit": "mg"
+  },
+  {
+    "id": 137,
+    "category": "Fatty acid profile",
+    "code": "f11d0",
+    "name": "Undecanoic (C11:0)",
+    "unit": "mg"
+  },
+  {
+    "id": 138,
+    "category": "Fatty acid profile",
+    "code": "f15d0",
+    "name": "Pentadecanoic (C15:0)",
+    "unit": "mg"
+  },
+  {
+    "id": 139,
+    "category": "Fatty acid profile",
+    "code": "f20d3n6",
+    "name": "Eicosatrienoic (C20:3n6)",
+    "unit": "mg"
+  },
+  {
+    "id": 140,
+    "category": "Fatty acid profile",
+    "code": "f20d5n3",
+    "name": "Eicosa-pentaenoic (C20:5n3)",
+    "unit": "mg"
+  },
+  {
+    "id": 141,
+    "category": "Fatty acid profile",
+    "code": "f22d6n3",
+    "name": "Docosa-hexaenoic (C22:6n3)",
+    "unit": "mg"
+  },
+  {
+    "id": 142,
+    "category": "Fatty acid profile",
+    "code": "cholc",
+    "name": "Cholesterol",
+    "unit": "mg"
+  },
+  {
+    "id": 143,
+    "category": "Fatty acid profile",
+    "code": "f22d2n6",
+    "name": "Docosadienoic (C22:2)",
+    "unit": "mg"
+  },
+  {
+    "id": 144,
+    "category": "Fatty acid profile",
+    "code": "f22d5n3",
+    "name": "Docosapentaenoic (C22:5n3)",
+    "unit": "mg"
+  },
+  {
+    "id": 145,
+    "category": "Fatty acid profile of edible oils and fats",
+    "code": "f4d0",
+    "name": "Butyric (C4:0)",
+    "unit": "%"
+  },
+  {
+    "id": 146,
+    "category": "Fatty acid profile of edible oils and fats",
+    "code": "f6d0",
+    "name": "Caproic (C6:0)",
+    "unit": "%"
+  },
+  {
+    "id": 147,
+    "category": "Fatty acid profile of edible oils and fats",
+    "code": "f8d0",
+    "name": "Caprylic (C8:0)",
+    "unit": "%"
+  },
+  {
+    "id": 148,
+    "category": "Fatty acid profile of edible oils and fats",
+    "code": "f10d0",
+    "name": "Capric (C10:0)",
+    "unit": "%"
+  },
+  {
+    "id": 149,
+    "category": "Fatty acid profile of edible oils and fats",
+    "code": "f12d0",
+    "name": "Lauric (C12:0)",
+    "unit": "%"
+  },
+  {
+    "id": 150,
+    "category": "Fatty acid profile of edible oils and fats",
+    "code": "f14d0",
+    "name": "Myristic (C14:0)",
+    "unit": "%"
+  },
+  {
+    "id": 151,
+    "category": "Fatty acid profile of edible oils and fats",
+    "code": "f16d0",
+    "name": "Palmitic (C16:0)",
+    "unit": "%"
+  },
+  {
+    "id": 152,
+    "category": "Fatty acid profile of edible oils and fats",
+    "code": "f18d0",
+    "name": "Stearic (C18:0)",
+    "unit": "%"
+  },
+  {
+    "id": 153,
+    "category": "Fatty acid profile of edible oils and fats",
+    "code": "f20d0",
+    "name": "Arachidic (C20:0)",
+    "unit": "%"
+  },
+  {
+    "id": 154,
+    "category": "Fatty acid profile of edible oils and fats",
+    "code": "f22d0",
+    "name": "Behenic (C22:0)",
+    "unit": "%"
+  },
+  {
+    "id": 155,
+    "category": "Fatty acid profile of edible oils and fats",
+    "code": "f24d0",
+    "name": "Lignoceric (C24:0)",
+    "unit": "%"
+  },
+  {
+    "id": 156,
+    "category": "Fatty acid profile of edible oils and fats",
+    "code": "f14d1cn5",
+    "name": "Myristoleic (C14:1)",
+    "unit": "%"
+  },
+  {
+    "id": 157,
+    "category": "Fatty acid profile of edible oils and fats",
+    "code": "f16d1cn7",
+    "name": "Palmitoleic (C16:1)",
+    "unit": "%"
+  },
+  {
+    "id": 158,
+    "category": "Fatty acid profile of edible oils and fats",
+    "code": "f18d1tn9",
+    "name": "Elaidic (C18:1n9t)",
+    "unit": "%"
+  },
+  {
+    "id": 159,
+    "category": "Fatty acid profile of edible oils and fats",
+    "code": "f18d1cn9",
+    "name": "Oleic (C18:1n9)",
+    "unit": "%"
+  },
+  {
+    "id": 160,
+    "category": "Fatty acid profile of edible oils and fats",
+    "code": "f20d1cn9",
+    "name": "Eicosenoic (C20:1n9)",
+    "unit": "%"
+  },
+  {
+    "id": 161,
+    "category": "Fatty acid profile of edible oils and fats",
+    "code": "f22d1cn9",
+    "name": "Erucic (C22:1n9)",
+    "unit": "%"
+  },
+  {
+    "id": 162,
+    "category": "Fatty acid profile of edible oils and fats",
+    "code": "f18d2cn6",
+    "name": "Linoleic (C18:2n6)",
+    "unit": "%"
+  },
+  {
+    "id": 163,
+    "category": "Fatty acid profile of edible oils and fats",
+    "code": "f18d3n3",
+    "name": "α-Linolenic (C18:3n3)",
+    "unit": "%"
+  },
+  {
+    "id": 164,
+    "category": "Fatty acid profile of edible oils and fats",
+    "code": "fasat",
+    "name": "Total saturated fatty acids (TSFA)",
+    "unit": "%"
+  },
+  {
+    "id": 165,
+    "category": "Fatty acid profile of edible oils and fats",
+    "code": "fams",
+    "name": "Total monounsaturated fatty acids (TMUFA) ",
+    "unit": "%"
+  },
+  {
+    "id": 166,
+    "category": "Fatty acid profile of edible oils and fats",
+    "code": "fapu",
+    "name": "Total polyunsaturated fatty acids (TPUFA)",
+    "unit": "%"
+  },
+  {
+    "id": 167,
+    "category": "Minerals and trace elements",
+    "code": "al",
+    "name": "Aluminium",
+    "unit": "mg"
+  },
+  {
+    "id": 168,
+    "category": "Minerals and trace elements",
+    "code": "as",
+    "name": "Arsenic",
+    "unit": "µg"
+  },
+  {
+    "id": 169,
+    "category": "Minerals and trace elements",
+    "code": "cd",
+    "name": "Cadmium",
+    "unit": "mg"
+  },
+  {
+    "id": 170,
+    "category": "Minerals and trace elements",
+    "code": "ca",
+    "name": "Calcium",
+    "unit": "mg"
+  },
+  {
+    "id": 171,
+    "category": "Minerals and trace elements",
+    "code": "cr",
+    "name": "Chromium",
+    "unit": "mg"
+  },
+  {
+    "id": 172,
+    "category": "Minerals and trace elements",
+    "code": "co",
+    "name": "Cobalt",
+    "unit": "mg"
+  },
+  {
+    "id": 173,
+    "category": "Minerals and trace elements",
+    "code": "cu",
+    "name": "Copper",
+    "unit": "mg"
+  },
+  {
+    "id": 174,
+    "category": "Minerals and trace elements",
+    "code": "fe",
+    "name": "Iron",
+    "unit": "mg"
+  },
+  {
+    "id": 175,
+    "category": "Minerals and trace elements",
+    "code": "pb",
+    "name": "Lead",
+    "unit": "mg"
+  },
+  {
+    "id": 176,
+    "category": "Minerals and trace elements",
+    "code": "li",
+    "name": "Lithium",
+    "unit": "mg"
+  },
+  {
+    "id": 177,
+    "category": "Minerals and trace elements",
+    "code": "mg",
+    "name": "Magnesium",
+    "unit": "mg"
+  },
+  {
+    "id": 178,
+    "category": "Minerals and trace elements",
+    "code": "mn",
+    "name": "Manganese",
+    "unit": "mg"
+  },
+  {
+    "id": 179,
+    "category": "Minerals and trace elements",
+    "code": "hg",
+    "name": "Mercury",
+    "unit": "µg"
+  },
+  {
+    "id": 180,
+    "category": "Minerals and trace elements",
+    "code": "mo",
+    "name": "Molebdenum",
+    "unit": "mg"
+  },
+  {
+    "id": 181,
+    "category": "Minerals and trace elements",
+    "code": "ni",
+    "name": "Nickel",
+    "unit": "mg"
+  },
+  {
+    "id": 182,
+    "category": "Minerals and trace elements",
+    "code": "p",
+    "name": "Phosphorus",
+    "unit": "mg"
+  },
+  {
+    "id": 183,
+    "category": "Minerals and trace elements",
+    "code": "k",
+    "name": "Potassium",
+    "unit": "mg"
+  },
+  {
+    "id": 184,
+    "category": "Minerals and trace elements",
+    "code": "se",
+    "name": "Selenium",
+    "unit": "µg"
+  },
+  {
+    "id": 185,
+    "category": "Minerals and trace elements",
+    "code": "na",
+    "name": "Sodium",
+    "unit": "mg"
+  },
+  {
+    "id": 186,
+    "category": "Minerals and trace elements",
+    "code": "zn",
+    "name": "Zinc",
+    "unit": "mg"
+  },
+  {
+    "id": 187,
+    "category": "Oligosaccharides, phytosterols, phytates, and saponins",
+    "code": "rafs",
+    "name": "Raffinose",
+    "unit": "g"
+  },
+  {
+    "id": 188,
+    "category": "Oligosaccharides, phytosterols, phytates, and saponins",
+    "code": "stas",
+    "name": "Stachyose",
+    "unit": "g"
+  },
+  {
+    "id": 189,
+    "category": "Oligosaccharides, phytosterols, phytates, and saponins",
+    "code": "vers",
+    "name": "Verbascose",
+    "unit": "g"
+  },
+  {
+    "id": 190,
+    "category": "Oligosaccharides, phytosterols, phytates, and saponins",
+    "code": "ajgs",
+    "name": "Ajugose",
+    "unit": "g"
+  },
+  {
+    "id": 191,
+    "category": "Oligosaccharides, phytosterols, phytates, and saponins",
+    "code": "camt",
+    "name": "Campestrol",
+    "unit": "mg"
+  },
+  {
+    "id": 192,
+    "category": "Oligosaccharides, phytosterols, phytates, and saponins",
+    "code": "stgstr",
+    "name": "Stigmasterol",
+    "unit": "mg"
+  },
+  {
+    "id": 193,
+    "category": "Oligosaccharides, phytosterols, phytates, and saponins",
+    "code": "stostrb",
+    "name": "β-Sitosterol",
+    "unit": "mg"
+  },
+  {
+    "id": 194,
+    "category": "Oligosaccharides, phytosterols, phytates, and saponins",
+    "code": "phytac",
+    "name": "Phytate",
+    "unit": "mg"
+  },
+  {
+    "id": 195,
+    "category": "Oligosaccharides, phytosterols, phytates, and saponins",
+    "code": "sapon",
+    "name": "Total saponin",
+    "unit": "g"
+  },
+  {
+    "id": 196,
+    "category": "Organic acids",
+    "code": "oxalt",
+    "name": "Total oxalate",
+    "unit": "mg"
+  },
+  {
+    "id": 197,
+    "category": "Organic acids",
+    "code": "oxals",
+    "name": "Soluble oxalate",
+    "unit": "mg"
+  },
+  {
+    "id": 198,
+    "category": "Organic acids",
+    "code": "oxali",
+    "name": "Insoluble oxalate",
+    "unit": "mg"
+  },
+  {
+    "id": 199,
+    "category": "Organic acids",
+    "code": "caconac",
+    "name": "Cis-aconitic acid",
+    "unit": "mg"
+  },
+  {
+    "id": 200,
+    "category": "Organic acids",
+    "code": "citac",
+    "name": "Citric acid",
+    "unit": "mg"
+  },
+  {
+    "id": 201,
+    "category": "Organic acids",
+    "code": "fumac",
+    "name": "Fumaric acid",
+    "unit": "mg"
+  },
+  {
+    "id": 202,
+    "category": "Organic acids",
+    "code": "malac",
+    "name": "Mallic acid",
+    "unit": "mg"
+  },
+  {
+    "id": 203,
+    "category": "Organic acids",
+    "code": "quinac",
+    "name": "Quinic acid",
+    "unit": "mg"
+  },
+  {
+    "id": 204,
+    "category": "Organic acids",
+    "code": "sucac",
+    "name": "Succinic acid",
+    "unit": "mg"
+  },
+  {
+    "id": 205,
+    "category": "Organic acids",
+    "code": "tarac",
+    "name": "Tartaric acid",
+    "unit": "mg"
+  },
+  {
+    "id": 206,
+    "category": "Polyphenols",
+    "code": "dhbenzac34",
+    "name": "3,4-Dihydroxybenzoic acid",
+    "unit": "mg"
+  },
+  {
+    "id": 207,
+    "category": "Polyphenols",
+    "code": "hbenzal3",
+    "name": "3-Hydroxybenzaldehyde",
+    "unit": "mg"
+  },
+  {
+    "id": 208,
+    "category": "Polyphenols",
+    "code": "pcathac",
+    "name": "Protocatechuic acid",
+    "unit": "mg"
+  },
+  {
+    "id": 209,
+    "category": "Polyphenols",
+    "code": "vanlac",
+    "name": "Vanillic acid",
+    "unit": "mg"
+  },
+  {
+    "id": 210,
+    "category": "Polyphenols",
+    "code": "gallac",
+    "name": "Gallic acid",
+    "unit": "mg"
+  },
+  {
+    "id": 211,
+    "category": "Polyphenols",
+    "code": "cinmac",
+    "name": "Cinnamic acid",
+    "unit": "mg"
+  },
+  {
+    "id": 212,
+    "category": "Polyphenols",
+    "code": "coumaco",
+    "name": "O-Cuomaric acid",
+    "unit": "mg"
+  },
+  {
+    "id": 213,
+    "category": "Polyphenols",
+    "code": "coumacp",
+    "name": "P-Cuomaric acid",
+    "unit": "mg"
+  },
+  {
+    "id": 214,
+    "category": "Polyphenols",
+    "code": "caffac",
+    "name": "Caffeic acid",
+    "unit": "mg"
+  },
+  {
+    "id": 215,
+    "category": "Polyphenols",
+    "code": "chlrac",
+    "name": "Chlorogenic acid",
+    "unit": "mg"
+  },
+  {
+    "id": 216,
+    "category": "Polyphenols",
+    "code": "ferac",
+    "name": "Ferulic acid",
+    "unit": "mg"
+  },
+  {
+    "id": 217,
+    "category": "Polyphenols",
+    "code": "apigen",
+    "name": "Apigenin",
+    "unit": "mg"
+  },
+  {
+    "id": 218,
+    "category": "Polyphenols",
+    "code": "apigen6cgls",
+    "name": "Apigenin-6-C-gluoside",
+    "unit": "mg"
+  },
+  {
+    "id": 219,
+    "category": "Polyphenols",
+    "code": "apigen7onshps",
+    "name": "Apigenin-7-O-neohesperidoside",
+    "unit": "mg"
+  },
+  {
+    "id": 220,
+    "category": "Polyphenols",
+    "code": "luteol",
+    "name": "Luteolin",
+    "unit": "mg"
+  },
+  {
+    "id": 221,
+    "category": "Polyphenols",
+    "code": "kaemf",
+    "name": "Kaempferol",
+    "unit": "mg"
+  },
+  {
+    "id": 222,
+    "category": "Polyphenols",
+    "code": "querce",
+    "name": "Quercetin",
+    "unit": "mg"
+  },
+  {
+    "id": 223,
+    "category": "Polyphenols",
+    "code": "querce3bdgls",
+    "name": "Quercetin-3-β-D-glucoside",
+    "unit": "mg"
+  },
+  {
+    "id": 224,
+    "category": "Polyphenols",
+    "code": "querce3ortns",
+    "name": "Quercetin-3-O-rutinoside",
+    "unit": "mg"
+  },
+  {
+    "id": 225,
+    "category": "Polyphenols",
+    "code": "querce3bgls",
+    "name": "Quercetin-3-β-galactoside",
+    "unit": "mg"
+  },
+  {
+    "id": 226,
+    "category": "Polyphenols",
+    "code": "isormt",
+    "name": "Isorhamnetin",
+    "unit": "mg"
+  },
+  {
+    "id": 227,
+    "category": "Polyphenols",
+    "code": "myrct",
+    "name": "Myricetin",
+    "unit": "mg"
+  },
+  {
+    "id": 228,
+    "category": "Polyphenols",
+    "code": "rsvrtol",
+    "name": "Resveratrol",
+    "unit": "mg"
+  },
+  {
+    "id": 229,
+    "category": "Polyphenols",
+    "code": "hespt",
+    "name": "Hesperetin",
+    "unit": "mg"
+  },
+  {
+    "id": 230,
+    "category": "Polyphenols",
+    "code": "narng",
+    "name": "Naringenin",
+    "unit": "mg"
+  },
+  {
+    "id": 231,
+    "category": "Polyphenols",
+    "code": "hespd",
+    "name": "Hesperdin",
+    "unit": "mg"
+  },
+  {
+    "id": 232,
+    "category": "Polyphenols",
+    "code": "daidzn",
+    "name": "Daidzein",
+    "unit": "mg"
+  },
+  {
+    "id": 233,
+    "category": "Polyphenols",
+    "code": "gnstein",
+    "name": "Genistein",
+    "unit": "mg"
+  },
+  {
+    "id": 234,
+    "category": "Polyphenols",
+    "code": "epicatec",
+    "name": "(-)-Epicatechin",
+    "unit": "mg"
+  },
+  {
+    "id": 235,
+    "category": "Polyphenols",
+    "code": "epicategc",
+    "name": "(-)-Epigallocatechin",
+    "unit": "mg"
+  },
+  {
+    "id": 236,
+    "category": "Polyphenols",
+    "code": "epicatgc3gal",
+    "name": "(-)-Epigallocatechin 3-gallate",
+    "unit": "mg"
+  },
+  {
+    "id": 237,
+    "category": "Polyphenols",
+    "code": "catec",
+    "name": "(+)-Catechin",
+    "unit": "mg"
+  },
+  {
+    "id": 238,
+    "category": "Polyphenols",
+    "code": "galcatecgal",
+    "name": "(-) Gallocatechin gallate",
+    "unit": "mg"
+  },
+  {
+    "id": 239,
+    "category": "Polyphenols",
+    "code": "galcatec",
+    "name": "(-) Gallo catechin",
+    "unit": "mg"
+  },
+  {
+    "id": 240,
+    "category": "Polyphenols",
+    "code": "syrgac",
+    "name": "Syringic acid",
+    "unit": "mg"
+  },
+  {
+    "id": 241,
+    "category": "Polyphenols",
+    "code": "sinpac",
+    "name": "Sinapinic acid",
+    "unit": "mg"
+  },
+  {
+    "id": 242,
+    "category": "Polyphenols",
+    "code": "ellgac",
+    "name": "Ellagic acid",
+    "unit": "mg"
+  },
+  {
+    "id": 243,
+    "category": "Polyphenols",
+    "code": "polyph",
+    "name": "Total polyphenols",
+    "unit": "mg"
+  },
+  {
+    "id": 244,
+    "category": "Proximate principles and dietary fiber",
+    "code": "water",
+    "name": "Moisture",
+    "unit": "g"
+  },
+  {
+    "id": 245,
+    "category": "Proximate principles and dietary fiber",
+    "code": "protcnt",
+    "name": "Protein",
+    "unit": "g"
+  },
+  {
+    "id": 246,
+    "category": "Proximate principles and dietary fiber",
+    "code": "ash",
+    "name": "Ash",
+    "unit": "g"
+  },
+  {
+    "id": 247,
+    "category": "Proximate principles and dietary fiber",
+    "code": "fatce",
+    "name": "Total fat",
+    "unit": "g"
+  },
+  {
+    "id": 248,
+    "category": "Proximate principles and dietary fiber",
+    "code": "fibtg",
+    "name": "Total dietary fibre",
+    "unit": "g"
+  },
+  {
+    "id": 249,
+    "category": "Proximate principles and dietary fiber",
+    "code": "fibins",
+    "name": "Insoluble dietary fiber",
+    "unit": "g"
+  },
+  {
+    "id": 250,
+    "category": "Proximate principles and dietary fiber",
+    "code": "fibsol",
+    "name": "Soluble dietary fiber",
+    "unit": "g"
+  },
+  {
+    "id": 251,
+    "category": "Proximate principles and dietary fiber",
+    "code": "choavldf",
+    "name": "Carbohydrate",
+    "unit": "g"
+  },
+  {
+    "id": 252,
+    "category": "Proximate principles and dietary fiber",
+    "code": "enerc",
+    "name": "Energy",
+    "unit": "KJ"
+  },
+  {
+    "id": 253,
+    "category": "Starch and individual sugars",
+    "code": "cho",
+    "name": "Total available CHO",
+    "unit": "g"
+  },
+  {
+    "id": 254,
+    "category": "Starch and individual sugars",
+    "code": "starch",
+    "name": "Total starch",
+    "unit": "g"
+  },
+  {
+    "id": 255,
+    "category": "Starch and individual sugars",
+    "code": "frus",
+    "name": "Fructose",
+    "unit": "g"
+  },
+  {
+    "id": 256,
+    "category": "Starch and individual sugars",
+    "code": "glus",
+    "name": "Glucose",
+    "unit": "g"
+  },
+  {
+    "id": 257,
+    "category": "Starch and individual sugars",
+    "code": "sucs",
+    "name": "Sucrose",
+    "unit": "g"
+  },
+  {
+    "id": 258,
+    "category": "Starch and individual sugars",
+    "code": "mals",
+    "name": "Maltose",
+    "unit": "g"
+  },
+  {
+    "id": 259,
+    "category": "Starch and individual sugars",
+    "code": "fsugar",
+    "name": "Total free sugars",
+    "unit": "g"
+  },
+  {
+    "id": 260,
+    "category": "Starch and individual sugars",
+    "code": "lactose",
+    "name": "Lactose",
+    "unit": "g/100"
+  },
+  {
+    "id": 261,
+    "category": "Water-soluble vitamins",
+    "code": "thia",
+    "name": "Thiamine (B1)",
+    "unit": "mg"
+  },
+  {
+    "id": 262,
+    "category": "Water-soluble vitamins",
+    "code": "ribf",
+    "name": "Riboflavin (B2)",
+    "unit": "mg"
+  },
+  {
+    "id": 263,
+    "category": "Water-soluble vitamins",
+    "code": "nia",
+    "name": "Niacin (B3)",
+    "unit": "mg"
+  },
+  {
+    "id": 264,
+    "category": "Water-soluble vitamins",
+    "code": "pantac",
+    "name": "Pantothenic acid (B5)",
+    "unit": "mg"
+  },
+  {
+    "id": 265,
+    "category": "Water-soluble vitamins",
+    "code": "vitb6c",
+    "name": "Total B6",
+    "unit": "mg"
+  },
+  {
+    "id": 266,
+    "category": "Water-soluble vitamins",
+    "code": "biot",
+    "name": "Biotin (B7)",
+    "unit": "µg"
+  },
+  {
+    "id": 267,
+    "category": "Water-soluble vitamins",
+    "code": "folsum",
+    "name": "Total folates (B9)",
+    "unit": "µg"
+  },
+  {
+    "id": 268,
+    "category": "Water-soluble vitamins",
+    "code": "vitc",
+    "name": "Total ascorbic acid",
+    "unit": "mg"
+  }
+]

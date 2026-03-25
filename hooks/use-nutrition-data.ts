@@ -1,8 +1,8 @@
 "use client"
 
 import { useState, useEffect, useMemo } from "react"
-import { supabase } from "@/lib/supabase"
-import type { Food, Nutrient, NutrientMetadata } from "@/lib/supabase"
+import { dataSource } from "@/lib/data"
+import type { Food, Nutrient, NutrientMetadata } from "@/lib/types"
 import { buildConversionMap } from "@/lib/unit-conversion"
 
 type UseNutritionDataResult = {
@@ -24,46 +24,12 @@ export function useNutritionData(): UseNutritionDataResult {
   useEffect(() => {
     async function fetchData() {
       try {
-        // Fetch rda_values and nutrient_metadata in parallel
-        const [nutrientsResult, metadataResult] = await Promise.all([
-          supabase
-            .from("rda_values")
-            .select("code, nutrient_name, value_type, rda_value, unit, category")
-            .order("nutrient_name"),
-          supabase
-            .from("nutrient_metadata")
-            .select("id, category, code, name, unit"),
-        ])
-
-        if (nutrientsResult.error) throw nutrientsResult.error
-        if (metadataResult.error) throw metadataResult.error
-
-        const nutrientsData = nutrientsResult.data
-        const metadataData = metadataResult.data
-
-        // Build column list: code, name, plus all nutrient codes
-        const nutrientColumns =
-          nutrientsData?.map((n) => n.code).join(", ") || ""
-        const selectColumns = `code, name${nutrientColumns ? ", " + nutrientColumns : ""}`
-
-        // Fetch foods with only the columns we need
-        const { data: foodsData, error: foodsError } = await supabase
-          .from("foods")
-          .select(selectColumns)
-
-        if (foodsError) throw foodsError
-
-        setFoods((foodsData as unknown as Food[]) || [])
-        setNutrients(nutrientsData || [])
-        setNutrientMetadata((metadataData as NutrientMetadata[]) || [])
+        const data = await dataSource.fetchNutritionData()
+        setFoods(data.foods)
+        setNutrients(data.nutrients)
+        setNutrientMetadata(data.nutrientMetadata)
       } catch (err: unknown) {
-        const supabaseError = err as {
-          message?: string
-          code?: string
-          details?: string
-        }
-        const errorMessage =
-          supabaseError.message || supabaseError.code || JSON.stringify(err)
+        const errorMessage = err instanceof Error ? err.message : JSON.stringify(err)
         console.error("Error fetching data:", errorMessage)
         setError(errorMessage)
       } finally {

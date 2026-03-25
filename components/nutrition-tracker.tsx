@@ -7,7 +7,7 @@ import { SelectedFoodsList } from "./selected-foods-list"
 import { useNutritionData } from "@/hooks/use-nutrition-data"
 import { calculateNutrientTotals, getEffectiveRda } from "@/lib/nutrition-utils"
 
-import type { Food } from "@/lib/supabase"
+import type { Food } from "@/lib/types"
 
 type SelectedFood = Food & { quantity: number }
 

@@ -9,7 +9,7 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command"
-import type { Food } from "@/lib/supabase"
+import type { Food } from "@/lib/types"
 
 interface FoodSearchProps {
   foods: Food[]

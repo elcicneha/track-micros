@@ -1,0 +1,314 @@
+[
+  {
+    "code": "vitc",
+    "nutrient_name": "Ascorbic Acid",
+    "value_type": "fixed",
+    "rda_value": 40,
+    "unit": "mg",
+    "category": "Vitamins"
+  },
+  {
+    "code": "biot",
+    "nutrient_name": "Biotin",
+    "value_type": "fixed",
+    "rda_value": 30,
+    "unit": "µg",
+    "category": "Vitamins"
+  },
+  {
+    "code": "ca",
+    "nutrient_name": "Calcium",
+    "value_type": "fixed",
+    "rda_value": 600,
+    "unit": "mg",
+    "category": "Minerals"
+  },
+  {
+    "code": "cr",
+    "nutrient_name": "Chromium",
+    "value_type": "fixed",
+    "rda_value": 50,
+    "unit": "µg",
+    "category": "Minerals"
+  },
+  {
+    "code": "cu",
+    "nutrient_name": "Copper",
+    "value_type": "fixed",
+    "rda_value": 1.7,
+    "unit": "mg",
+    "category": "Minerals"
+  },
+  {
+    "code": "cys",
+    "nutrient_name": "Cysteine",
+    "value_type": "per_kg",
+    "rda_value": 18,
+    "unit": "mg",
+    "category": "Amino Acids"
+  },
+  {
+    "code": "folsum",
+    "nutrient_name": "Dietary folate",
+    "value_type": "fixed",
+    "rda_value": 200,
+    "unit": "µg",
+    "category": "Minerals"
+  },
+  {
+    "code": "enerc",
+    "nutrient_name": "Energy",
+    "value_type": "fixed",
+    "rda_value": 1900,
+    "unit": "kcal",
+    "category": "Macros"
+  },
+  {
+    "code": "his",
+    "nutrient_name": "Histidine",
+    "value_type": "per_kg",
+    "rda_value": 12,
+    "unit": "mg",
+    "category": "Amino Acids"
+  },
+  {
+    "code": "fe",
+    "nutrient_name": "Iron",
+    "value_type": "fixed",
+    "rda_value": 21,
+    "unit": "mg",
+    "category": "Minerals"
+  },
+  {
+    "code": "ile",
+    "nutrient_name": "Isoleucine",
+    "value_type": "per_kg",
+    "rda_value": 23,
+    "unit": "mg",
+    "category": "Amino Acids"
+  },
+  {
+    "code": "leu",
+    "nutrient_name": "Leucine",
+    "value_type": "per_kg",
+    "rda_value": 44,
+    "unit": "mg",
+    "category": "Amino Acids"
+  },
+  {
+    "code": "lys",
+    "nutrient_name": "Lysine",
+    "value_type": "per_kg",
+    "rda_value": 35,
+    "unit": "mg",
+    "category": "Amino Acids"
+  },
+  {
+    "code": "mg",
+    "nutrient_name": "Magnesium",
+    "value_type": "fixed",
+    "rda_value": 310,
+    "unit": "mg",
+    "category": "Minerals"
+  },
+  {
+    "code": "mn",
+    "nutrient_name": "Manganese",
+    "value_type": "fixed",
+    "rda_value": 4,
+    "unit": "mg",
+    "category": "Minerals"
+  },
+  {
+    "code": "met",
+    "nutrient_name": "Methionine",
+    "value_type": "per_kg",
+    "rda_value": 18,
+    "unit": "mg",
+    "category": "Amino Acids"
+  },
+  {
+    "code": "mo",
+    "nutrient_name": "Molybdenum",
+    "value_type": "fixed",
+    "rda_value": 45,
+    "unit": "µg",
+    "category": "Minerals"
+  },
+  {
+    "code": "nia",
+    "nutrient_name": "Niacin",
+    "value_type": "fixed",
+    "rda_value": 12,
+    "unit": "mg",
+    "category": "Vitamins"
+  },
+  {
+    "code": "pantac",
+    "nutrient_name": "Pantothenic acid",
+    "value_type": "fixed",
+    "rda_value": 5,
+    "unit": "mg",
+    "category": "Vitamins"
+  },
+  {
+    "code": "phe",
+    "nutrient_name": "Phenylalanine",
+    "value_type": "per_kg",
+    "rda_value": 30,
+    "unit": "mg",
+    "category": "Amino Acids"
+  },
+  {
+    "code": "p",
+    "nutrient_name": "Phosphorus",
+    "value_type": "fixed",
+    "rda_value": 600,
+    "unit": "mg",
+    "category": "Minerals"
+  },
+  {
+    "code": "k",
+    "nutrient_name": "Potassium",
+    "value_type": "fixed",
+    "rda_value": 3225,
+    "unit": "mg",
+    "category": "Minerals"
+  },
+  {
+    "code": "protcnt",
+    "nutrient_name": "Protein",
+    "value_type": "per_kg",
+    "rda_value": 1,
+    "unit": "g",
+    "category": "Macros"
+  },
+  {
+    "code": "retol",
+    "nutrient_name": "Retinol",
+    "value_type": "fixed",
+    "rda_value": 600,
+    "unit": "µg",
+    "category": "Vitamins"
+  },
+  {
+    "code": "ribf",
+    "nutrient_name": "Riboflavin",
+    "value_type": "fixed",
+    "rda_value": 1.1,
+    "unit": "mg",
+    "category": "Vitamins"
+  },
+  {
+    "code": "se",
+    "nutrient_name": "Selenium",
+    "value_type": "fixed",
+    "rda_value": 40,
+    "unit": "µg",
+    "category": "Minerals"
+  },
+  {
+    "code": "na",
+    "nutrient_name": "Sodium",
+    "value_type": "fixed",
+    "rda_value": 1900,
+    "unit": "mg",
+    "category": "Minerals"
+  },
+  {
+    "code": "thia",
+    "nutrient_name": "Thiamine",
+    "value_type": "fixed",
+    "rda_value": 1,
+    "unit": "mg",
+    "category": "Vitamins"
+  },
+  {
+    "code": "thr",
+    "nutrient_name": "Threonine",
+    "value_type": "per_kg",
+    "rda_value": 18,
+    "unit": "mg",
+    "category": "Amino Acids"
+  },
+  {
+    "code": "trp",
+    "nutrient_name": "Tryptophan",
+    "value_type": "per_kg",
+    "rda_value": 4.8,
+    "unit": "mg",
+    "category": "Amino Acids"
+  },
+  {
+    "code": "tyr",
+    "nutrient_name": "Tyrosine",
+    "value_type": "per_kg",
+    "rda_value": 30,
+    "unit": "mg",
+    "category": "Amino Acids"
+  },
+  {
+    "code": "val",
+    "nutrient_name": "Valine",
+    "value_type": "per_kg",
+    "rda_value": 29,
+    "unit": "mg",
+    "category": "Amino Acids"
+  },
+  {
+    "code": "fatce",
+    "nutrient_name": "Visible Fat",
+    "value_type": "fixed",
+    "rda_value": 20,
+    "unit": "g",
+    "category": "Macros"
+  },
+  {
+    "code": "vitb6c",
+    "nutrient_name": "Vitamin B6",
+    "value_type": "fixed",
+    "rda_value": 2,
+    "unit": "mg",
+    "category": "Vitamins"
+  },
+  {
+    "code": "doh25",
+    "nutrient_name": "Vitamin D",
+    "value_type": "fixed",
+    "rda_value": 10,
+    "unit": "μg",
+    "category": "Vitamins"
+  },
+  {
+    "code": "vite",
+    "nutrient_name": "Vitamin E",
+    "value_type": "fixed",
+    "rda_value": 9,
+    "unit": "mg",
+    "category": "Vitamins"
+  },
+  {
+    "code": "vitk1",
+    "nutrient_name": "Vitamin K (K1,K2)",
+    "value_type": "fixed",
+    "rda_value": 55,
+    "unit": "µg",
+    "category": "Vitamins"
+  },
+  {
+    "code": "zn",
+    "nutrient_name": "Zinc",
+    "value_type": "fixed",
+    "rda_value": 10,
+    "unit": "mg",
+    "category": "Minerals"
+  },
+  {
+    "code": "cartb",
+    "nutrient_name": "β-carotene",
+    "value_type": "fixed",
+    "rda_value": 4800,
+    "unit": "µg",
+    "category": "Vitamins"
+  }
+]
